@@ -6,7 +6,7 @@
 [![Database](https://img.shields.io/badge/SQLite-WAL%20Mode-003B57?style=flat-square&logo=sqlite)](https://sqlite.org)
 [![License](https://img.shields.io/badge/Academic-Thesis-brightgreen?style=flat-square)](#)
 
-Aplikasi berbasis web **Streamlit** untuk perencanaan rute distribusi *catering box* secara otomatis dan presisi di area Bantul dan Sleman, Yogyakarta (Studi Kasus: **Inzan Catering Bantul**). 
+Aplikasi berbasis web **Streamlit** untuk perencanaan rute distribusi *catering box* secara otomatis dan presisi di area Bantul dan Sleman, Yogyakarta. 
 
 Sistem ini mengimplementasikan pendekatan **Cluster First, Route Second (CFRS)** dengan mengintegrasikan **K-Medoids** termodifikasi (Tabu Set R kapasitas), **Hybrid Genetic Algorithm + Tabu Search (GA-TS)**, serta **GraphHopper Localhost** untuk perhitungan jarak nyata di jalan raya, yang disesuaikan secara dinamis dengan **Koefisien Kemacetan Waktu (Time-Varying $\gamma_p$)**.
 
