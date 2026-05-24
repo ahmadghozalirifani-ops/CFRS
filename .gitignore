@@ -1,0 +1,54 @@
+# ==============================================================================
+# CFRS KATERING — .gitignore
+# ==============================================================================
+
+# --- Python & Virtual Environment ---
+.venv/
+venv/
+ENV/
+bin/
+lib/
+include/
+pyvenv.cfg
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# --- Cache Algoritma & Modul (GraphHopper Matrix Cache) ---
+.matrix_cache/
+.sixth/
+.claude/
+.matrix_cache
+.claude
+
+# --- Database & Data Sensitif (Keamanan & Privasi) ---
+# database lokal SQLite diabaikan agar data pelanggan/no handphone tidak terekspos di publik
+cfrs_katering.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# --- File Sementara & Office Temp (Penting untuk Skripsi Word) ---
+~$*
+~*
+~WRL*.tmp
+*.tmp
+.Rhistory
+.RData
+
+# --- Sistem Operasi ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- Media & Output Hasil (Opsional) ---
+# Jika Anda ingin mengupload file output JSON/CSV tertentu, silakan hapus baris di bawah ini.
+# Namun secara default, file hasil running lokal diabaikan agar repositori bersih.
+routes_*.json
+summary_*.csv
+detail_*.csv
