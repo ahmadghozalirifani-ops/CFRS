@@ -38,6 +38,20 @@ def render(delivery_date_str: str, delivery_date, _DB_AVAILABLE: bool,
     )
 
     # Populate default_df
+    if "_prev_order_source" not in st.session_state:
+        st.session_state["_prev_order_source"] = order_source
+
+    if st.session_state["_prev_order_source"] != order_source:
+        st.session_state["_prev_order_source"] = order_source
+        if order_source == "SAMPLE_ORDERS (config.py)":
+            st.session_state["edited_df"] = sample_orders_to_df(SAMPLE_ORDERS, delivery_date_str)
+            st.rerun()
+        elif order_source == "Database" and _DB_AVAILABLE:
+            db_orders = _get_orders_by_date(delivery_date_str)
+            st.session_state["edited_df"] = db_orders_to_df(db_orders) if db_orders else pd.DataFrame(
+                columns=["id","customer","phone","address","lat","lon","boxes","delivery_slot","delivery_date"])
+            st.rerun()
+
     if clear_btn:
         st.session_state["edited_df"] = pd.DataFrame(
             columns=["id","customer","phone","address","lat","lon","boxes","delivery_slot","delivery_date"])
